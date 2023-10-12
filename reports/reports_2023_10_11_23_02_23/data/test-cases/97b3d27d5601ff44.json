@@ -1,0 +1,131 @@
+{
+  "uid" : "97b3d27d5601ff44",
+  "name" : "test_login[testcase2]",
+  "fullName" : "testcase.test_user.TestUser#test_login",
+  "historyId" : "1330ead572f48b24438a6d0fe0c0e200",
+  "time" : {
+    "start" : 1697036543127,
+    "stop" : 1697036543190,
+    "duration" : 63
+  },
+  "status" : "broken",
+  "statusMessage" : "KeyError: 'msg'",
+  "statusTrace" : "self = <test_user.TestUser object at 0x00000205A422BFD0>\ntestcase = {'extract': [{'token': '$..token'}], 'feature': '密码错误', 'parameterize': [['feature', 'username', 'password', 'code', '..., ['密码错误', 'root', 'wj3189021', 200, '密码错误']], 'request': {'json': {'password': 'wj3189021', 'username': 'root'}}, ...}\n\n    @pytest.mark.parametrize(\"testcase\", read_testcase_yaml(\"data/user/login.yaml\"))\n    @pytest.mark.p1\n    def test_login(self, testcase):\n>       RequestUtils(DebugTalk()).standard_yaml(testcase)\n\ntestcase\\test_user.py:16: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nutils\\request_util.py:30: in standard_yaml\n    assert_result(caseinfo['validate'], res.json())\nutils\\assert_util.py:21: in assert_result\n    raise e\nutils\\assert_util.py:11: in assert_result\n    equals_flag = equal_assert(value, result_json)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nexpect = {'msg': '密码错误'}, real = {'code': 201, 'message': '用户不存在'}\n\n    def equal_assert(expect, real):\n        flag = 0\n        for key, value in expect.items():\n            log(\"预期结果：%s\" % expect)\n            log(\"实际结果：%s\" % real)\n            if key == \"code\":\n                if value != real['code']:\n                    flag += 1\n            if key == \"msg\":\n>               if value != real['msg']:\nE               KeyError: 'msg'\n\nutils\\assert_util.py:35: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542422,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "fixture",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542423,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542422,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "KeyError: 'msg'",
+    "statusTrace" : "self = <test_user.TestUser object at 0x00000205A422BFD0>\ntestcase = {'extract': [{'token': '$..token'}], 'feature': '密码错误', 'parameterize': [['feature', 'username', 'password', 'code', '..., ['密码错误', 'root', 'wj3189021', 200, '密码错误']], 'request': {'json': {'password': 'wj3189021', 'username': 'root'}}, ...}\n\n    @pytest.mark.parametrize(\"testcase\", read_testcase_yaml(\"data/user/login.yaml\"))\n    @pytest.mark.p1\n    def test_login(self, testcase):\n>       RequestUtils(DebugTalk()).standard_yaml(testcase)\n\ntestcase\\test_user.py:16: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nutils\\request_util.py:30: in standard_yaml\n    assert_result(caseinfo['validate'], res.json())\nutils\\assert_util.py:21: in assert_result\n    raise e\nutils\\assert_util.py:11: in assert_result\n    equals_flag = equal_assert(value, result_json)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nexpect = {'msg': '密码错误'}, real = {'code': 201, 'message': '用户不存在'}\n\n    def equal_assert(expect, real):\n        flag = 0\n        for key, value in expect.items():\n            log(\"预期结果：%s\" % expect)\n            log(\"实际结果：%s\" % real)\n            if key == \"code\":\n                if value != real['code']:\n                    flag += 1\n            if key == \"msg\":\n>               if value != real['msg']:\nE               KeyError: 'msg'\n\nutils\\assert_util.py:35: KeyError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "947acf53a5993831",
+      "name" : "log",
+      "source" : "947acf53a5993831.txt",
+      "type" : "text/plain",
+      "size" : 784
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "p1"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_user"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUser"
+  }, {
+    "name" : "host",
+    "value" : "PC-20210703LXZF"
+  }, {
+    "name" : "thread",
+    "value" : "17592-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_user"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "testcase",
+    "value" : "{'feature': '密码错误', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user/login', 'method': 'post', 'json': {'username': 'root', 'password': 'wj3189021'}}, 'extract': [{'token': '$..token'}], 'validate': [{'equals': {'code': 200}}, {'equals': {'msg': '密码错误'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'code', 'msg'], ['正常登录', 'root', 'wj318902', 200, '登录成功'], ['不存在的用户名', 'root1', 'wj318902', 201, '用户不存在'], ['密码错误', 'root', 'wj3189021', 200, '密码错误']]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "p1" ]
+  },
+  "source" : "97b3d27d5601ff44.json",
+  "parameterValues" : [ "{'feature': '密码错误', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user/login', 'method': 'post', 'json': {'username': 'root', 'password': 'wj3189021'}}, 'extract': [{'token': '$..token'}], 'validate': [{'equals': {'code': 200}}, {'equals': {'msg': '密码错误'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'code', 'msg'], ['正常登录', 'root', 'wj318902', 200, '登录成功'], ['不存在的用户名', 'root1', 'wj318902', 201, '用户不存在'], ['密码错误', 'root', 'wj3189021', 200, '密码错误']]}" ]
+}

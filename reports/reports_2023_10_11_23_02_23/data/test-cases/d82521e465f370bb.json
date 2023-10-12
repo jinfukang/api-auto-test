@@ -1,0 +1,123 @@
+{
+  "uid" : "d82521e465f370bb",
+  "name" : "test_add[testcase5]",
+  "fullName" : "testcase.test_user.TestUser#test_add",
+  "historyId" : "06baad40ec48d1b227097621f4411aa2",
+  "time" : {
+    "start" : 1697036542904,
+    "stop" : 1697036542969,
+    "duration" : 65
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542422,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "fixture",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542423,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "_verify_url",
+    "time" : {
+      "start" : 1697036542422,
+      "stop" : 1697036542422,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "843b98153a6e98cd",
+      "name" : "log",
+      "source" : "843b98153a6e98cd.txt",
+      "type" : "text/plain",
+      "size" : 878
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "p1"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_user"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUser"
+  }, {
+    "name" : "host",
+    "value" : "PC-20210703LXZF"
+  }, {
+    "name" : "thread",
+    "value" : "17592-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_user"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "testcase",
+    "value" : "{'feature': '新增用户-缺少phone', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '123456789', 'email': 'sdfs@qq.com', 'phone': '', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "p1" ]
+  },
+  "source" : "d82521e465f370bb.json",
+  "parameterValues" : [ "{'feature': '新增用户-缺少phone', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '123456789', 'email': 'sdfs@qq.com', 'phone': '', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+}

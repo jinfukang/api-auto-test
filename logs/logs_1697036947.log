@@ -1,0 +1,111 @@
+[2023-10-11 23:09:07,616] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:07,617] logger_util.py->log line:42 [INFO] 用例名称：新增用户
+[2023-10-11 23:09:07,617] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:07,617] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:07,680] logger_util.py->log line:42 [INFO] 请求耗时：60 ms
+[2023-10-11 23:09:07,680] logger_util.py->log line:42 [INFO] 预期结果：{'code': 200}
+[2023-10-11 23:09:07,680] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'msg': '用户名已存在', 'data': None}
+[2023-10-11 23:09:07,680] logger_util.py->log line:42 [INFO] 预期结果：{'msg': 'success'}
+[2023-10-11 23:09:07,680] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'msg': '用户名已存在', 'data': None}
+[2023-10-11 23:09:07,681] logger_util.py->log line:42 [INFO] 接口测试失败
+[2023-10-11 23:09:07,681] logger_util.py->log line:42 [INFO] 断言异常：
+[2023-10-11 23:09:07,681] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:07,803] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:07,804] logger_util.py->log line:42 [INFO] 用例名称：新增重复用户
+[2023-10-11 23:09:07,804] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:07,804] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 请求耗时：60 ms
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 预期结果：{'code': 201}
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'msg': '用户名已存在', 'data': None}
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户名已存在'}
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'msg': '用户名已存在', 'data': None}
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:07,866] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:07,869] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:07,870] logger_util.py->log line:42 [INFO] 用例名称：新增用户-缺少name
+[2023-10-11 23:09:07,870] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:07,870] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:07,934] logger_util.py->log line:42 [INFO] 请求耗时：62 ms
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] 预期结果：{'code': 400}
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户名、密码、邮箱、手机号码不能为空'}
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:07,935] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:07,938] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:07,939] logger_util.py->log line:42 [INFO] 用例名称：新增用户-缺少password
+[2023-10-11 23:09:07,939] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:07,939] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 请求耗时：61 ms
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 预期结果：{'code': 400}
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户名、密码、邮箱、手机号码不能为空'}
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:08,002] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:08,006] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:08,007] logger_util.py->log line:42 [INFO] 用例名称：新增用户-缺少email
+[2023-10-11 23:09:08,007] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:08,007] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 请求耗时：61 ms
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 预期结果：{'code': 400}
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户名、密码、邮箱、手机号码不能为空'}
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:08,070] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:08,074] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:08,074] logger_util.py->log line:42 [INFO] 用例名称：新增用户-缺少phone
+[2023-10-11 23:09:08,074] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user
+[2023-10-11 23:09:08,074] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,136] logger_util.py->log line:42 [INFO] 请求耗时：61 ms
+[2023-10-11 23:09:08,136] logger_util.py->log line:42 [INFO] 预期结果：{'code': 400}
+[2023-10-11 23:09:08,137] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,137] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户名、密码、邮箱、手机号码不能为空'}
+[2023-10-11 23:09:08,137] logger_util.py->log line:42 [INFO] 实际结果：{'code': 400, 'msg': '用户名、密码、邮箱、手机号码不能为空', 'data': None}
+[2023-10-11 23:09:08,137] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:08,137] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:08,140] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:08,141] logger_util.py->log line:42 [INFO] 用例名称：正常登录
+[2023-10-11 23:09:08,141] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user/login
+[2023-10-11 23:09:08,141] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,203] logger_util.py->log line:42 [INFO] 请求耗时：61 ms
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] 预期结果：{'code': 200}
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] 实际结果：{'code': 200, 'msg': '登录成功', 'data': {'email': 'admin@qq.com', 'phone': '176123456789', 'refreshtoken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYWRtaW4iLCJpc3MiOiJkZW1vUHJvamVjdCIsImV4cCI6MTY5NzY0MTc0OH0.ogcKihsAA5vrzyy62DPTJnEShQ4olP9h3JFsNsrMldg', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYWRtaW4iLCJpc3MiOiJkZW1vUHJvamVjdCIsInN1YiI6InVzZXIgdG9rZW4iLCJleHAiOjE2OTcwNDA1NDgsImlhdCI6MTY5NzAzNjk0OH0.lpxqSdR3A1tEnueoUyPQpEuElTQVAHSty62pJcIuwxc', 'user_id': 70, 'username': 'admin'}}
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '登录成功'}
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] 实际结果：{'code': 200, 'msg': '登录成功', 'data': {'email': 'admin@qq.com', 'phone': '176123456789', 'refreshtoken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYWRtaW4iLCJpc3MiOiJkZW1vUHJvamVjdCIsImV4cCI6MTY5NzY0MTc0OH0.ogcKihsAA5vrzyy62DPTJnEShQ4olP9h3JFsNsrMldg', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzAsInVzZXJuYW1lIjoiYWRtaW4iLCJpc3MiOiJkZW1vUHJvamVjdCIsInN1YiI6InVzZXIgdG9rZW4iLCJleHAiOjE2OTcwNDA1NDgsImlhdCI6MTY5NzAzNjk0OH0.lpxqSdR3A1tEnueoUyPQpEuElTQVAHSty62pJcIuwxc', 'user_id': 70, 'username': 'admin'}}
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] 接口测试成功
+[2023-10-11 23:09:08,204] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:08,208] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:08,208] logger_util.py->log line:42 [INFO] 用例名称：不存在的用户名
+[2023-10-11 23:09:08,209] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user/login
+[2023-10-11 23:09:08,209] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,271] logger_util.py->log line:42 [INFO] 请求耗时：61 ms
+[2023-10-11 23:09:08,271] logger_util.py->log line:42 [INFO] 预期结果：{'code': 201}
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'message': '用户不存在'}
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '用户不存在'}
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'message': '用户不存在'}
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] 接口测试失败
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] 断言异常：'msg'
+[2023-10-11 23:09:08,272] logger_util.py->log line:42 [INFO] ------接口测试结束------
+
+[2023-10-11 23:09:08,281] logger_util.py->log line:42 [INFO] ------接口测试开始啦------
+[2023-10-11 23:09:08,282] logger_util.py->log line:42 [INFO] 用例名称：密码错误
+[2023-10-11 23:09:08,282] logger_util.py->log line:42 [INFO] 请求路径：http://1.94.32.200:9090/v1/user/login
+[2023-10-11 23:09:08,282] logger_util.py->log line:42 [INFO] 请求方法：post
+[2023-10-11 23:09:08,349] logger_util.py->log line:42 [INFO] 请求耗时：66 ms
+[2023-10-11 23:09:08,349] logger_util.py->log line:42 [INFO] 预期结果：{'code': 200}
+[2023-10-11 23:09:08,349] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'message': '用户不存在'}
+[2023-10-11 23:09:08,349] logger_util.py->log line:42 [INFO] 预期结果：{'msg': '密码错误'}
+[2023-10-11 23:09:08,350] logger_util.py->log line:42 [INFO] 实际结果：{'code': 201, 'message': '用户不存在'}
+[2023-10-11 23:09:08,350] logger_util.py->log line:42 [INFO] 接口测试失败
+[2023-10-11 23:09:08,350] logger_util.py->log line:42 [INFO] 断言异常：'msg'
+[2023-10-11 23:09:08,350] logger_util.py->log line:42 [INFO] ------接口测试结束------
+

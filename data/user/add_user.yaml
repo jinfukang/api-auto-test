@@ -1,0 +1,26 @@
+-
+  feature: "$ddt{feature}"
+  base_url: "${read_config_yaml(base,url)}"
+  request:
+    url: "/v1/user"
+    method: "post"
+    json:
+      username: "$ddt{username}"
+      password: "$ddt{password}"
+      email: "$ddt{email}"
+      phone: "$ddt{phone}"
+      active: "$ddt{active}"
+  extract:
+    - id: "$..ID"
+  validate:
+    - equals: {code: "$ddt{code}"}
+    - equals: {msg: "$ddt{msg}"}
+    - greater: {time: 2000}
+  parameterize:
+    - ["feature", "username", "password", "email", "phone", "active", "code", "msg"]
+    - ["新增用户", "admin", "123456789", "admin@qq.com", "176123456789", 1, 200, "success"]
+    - ["新增重复用户", "dsfsdf", "123456789", "sdfs@qq.com", "13234324", 1, 201, "用户名已存在"]
+    - ["新增用户-缺少name", "", "123456789", "sdfs@qq.com", "13234324", 1, 400, "用户名、密码、邮箱、手机号码不能为空"]
+    - ["新增用户-缺少password", "dsfsdf", "", "sdfs@qq.com", "13234324", 1, 400, "用户名、密码、邮箱、手机号码不能为空"]
+    - ["新增用户-缺少email", "dsfsdf", "123456789", "", "13234324", 1, 400, "用户名、密码、邮箱、手机号码不能为空"]
+    - ["新增用户-缺少phone", "dsfsdf", "123456789", "sdfs@qq.com", "", 1, 400, "用户名、密码、邮箱、手机号码不能为空"]

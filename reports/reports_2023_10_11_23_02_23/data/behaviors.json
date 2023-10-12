@@ -1,0 +1,122 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "test_add[testcase0]",
+    "uid" : "e46d693ab4354a69",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1697036542424,
+      "stop" : 1697036542495,
+      "duration" : 71
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增用户', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'admin', 'password': '123456789', 'email': 'admin@qq.com', 'phone': '176123456789', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 200}}, {'equals': {'msg': 'success'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_add[testcase1]",
+    "uid" : "8aeeaf8f4c951e68",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1697036542631,
+      "stop" : 1697036542697,
+      "duration" : 66
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增重复用户', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '123456789', 'email': 'sdfs@qq.com', 'phone': '13234324', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 201}}, {'equals': {'msg': '用户名已存在'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_add[testcase2]",
+    "uid" : "6dc5bb1cae35fa10",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1697036542701,
+      "stop" : 1697036542765,
+      "duration" : 64
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增用户-缺少name', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': '', 'password': '123456789', 'email': 'sdfs@qq.com', 'phone': '13234324', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_add[testcase3]",
+    "uid" : "22ddeca9610e1615",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1697036542768,
+      "stop" : 1697036542833,
+      "duration" : 65
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增用户-缺少password', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '', 'email': 'sdfs@qq.com', 'phone': '13234324', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_add[testcase4]",
+    "uid" : "8a6356aa86703047",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1697036542836,
+      "stop" : 1697036542901,
+      "duration" : 65
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增用户-缺少email', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '123456789', 'email': '', 'phone': '13234324', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_add[testcase5]",
+    "uid" : "d82521e465f370bb",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1697036542904,
+      "stop" : 1697036542969,
+      "duration" : 65
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '新增用户-缺少phone', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user', 'method': 'post', 'json': {'username': 'dsfsdf', 'password': '123456789', 'email': 'sdfs@qq.com', 'phone': '', 'active': 1}}, 'extract': [{'id': '$..ID'}], 'validate': [{'equals': {'code': 400}}, {'equals': {'msg': '用户名、密码、邮箱、手机号码不能为空'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'email', 'phone', 'active', 'code', 'msg'], ['新增用户', 'admin', '123456789', 'admin@qq.com', '176123456789', 1, 200, 'success'], ['新增重复用户', 'dsfsdf', '123456789', 'sdfs@qq.com', '13234324', 1, 201, '用户名已存在'], ['新增用户-缺少name', '', '123456789', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少password', 'dsfsdf', '', 'sdfs@qq.com', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少email', 'dsfsdf', '123456789', '', '13234324', 1, 400, '用户名、密码、邮箱、手机号码不能为空'], ['新增用户-缺少phone', 'dsfsdf', '123456789', 'sdfs@qq.com', '', 1, 400, '用户名、密码、邮箱、手机号码不能为空']]}" ]
+  }, {
+    "name" : "test_login[testcase0]",
+    "uid" : "15d5ae0061a07e8",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1697036542972,
+      "stop" : 1697036543039,
+      "duration" : 67
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '正常登录', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user/login', 'method': 'post', 'json': {'username': 'root', 'password': 'wj318902'}}, 'extract': [{'token': '$..token'}], 'validate': [{'equals': {'code': 200}}, {'equals': {'msg': '登录成功'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'code', 'msg'], ['正常登录', 'root', 'wj318902', 200, '登录成功'], ['不存在的用户名', 'root1', 'wj318902', 201, '用户不存在'], ['密码错误', 'root', 'wj3189021', 200, '密码错误']]}" ]
+  }, {
+    "name" : "test_login[testcase1]",
+    "uid" : "98000c219f18950c",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1697036543050,
+      "stop" : 1697036543117,
+      "duration" : 67
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '不存在的用户名', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user/login', 'method': 'post', 'json': {'username': 'root1', 'password': 'wj318902'}}, 'extract': [{'token': '$..token'}], 'validate': [{'equals': {'code': 201}}, {'equals': {'msg': '用户不存在'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'code', 'msg'], ['正常登录', 'root', 'wj318902', 200, '登录成功'], ['不存在的用户名', 'root1', 'wj318902', 201, '用户不存在'], ['密码错误', 'root', 'wj3189021', 200, '密码错误']]}" ]
+  }, {
+    "name" : "test_login[testcase2]",
+    "uid" : "97b3d27d5601ff44",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1697036543127,
+      "stop" : 1697036543190,
+      "duration" : 63
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "{'feature': '密码错误', 'base_url': '${read_config_yaml(base,url)}', 'request': {'url': '/v1/user/login', 'method': 'post', 'json': {'username': 'root', 'password': 'wj3189021'}}, 'extract': [{'token': '$..token'}], 'validate': [{'equals': {'code': 200}}, {'equals': {'msg': '密码错误'}}, {'greater': {'time': 2000}}], 'parameterize': [['feature', 'username', 'password', 'code', 'msg'], ['正常登录', 'root', 'wj318902', 200, '登录成功'], ['不存在的用户名', 'root1', 'wj318902', 201, '用户不存在'], ['密码错误', 'root', 'wj3189021', 200, '密码错误']]}" ]
+  } ]
+}
