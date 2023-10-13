@@ -1,5 +1,5 @@
 base:
-  url: http://1.94.32.200:9090
+  url: http://www.studyhard.website
 
 log:
   log_name: logs_

@@ -1,7 +1,8 @@
 logs/
 reports/
 temps/
-testcase/__pycache__/
-debugTalk/__pycache__/
-utils/__pycache__/
+testcase/__pycache__/*
+debugTalk/__pycache__/*
+utils/__pycache__/*
 .hypothesis/
+./extract.yaml

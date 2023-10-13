@@ -13,6 +13,9 @@ def assert_result(expect, result_json):
                 if key == "contains":
                     contains_flag = contains_assert(value, result_json)
                     all_flag = all_flag + contains_flag
+                if key == "greater":
+                    greater_flag = greater_assert(value, result_json)
+                    all_flag = all_flag + greater_flag
         assert all_flag == 0
         log("接口测试成功")
     except Exception as e:
