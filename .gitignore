@@ -6,3 +6,4 @@ debugTalk/__pycache__/*
 utils/__pycache__/*
 .hypothesis/
 /extract.yaml
+.idea/
