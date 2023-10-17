@@ -1,3 +1,4 @@
+import json
 import requests
 from utils.assert_util import assert_result
 from utils.yaml_utils import write_data
@@ -22,8 +23,7 @@ class RequestUtils:
 
         if 'extract' in caseinfo.keys():
             result = res.json()
-            result['time'] = res.elapsed.microseconds / 1000
-            if result.get('code') == 200:
+            if result.get('code') == 200 and "token" in json.dumps(result):
                 for item in caseinfo['extract']:
                     for key, value in item.items():
                         id = jsonpath(result, value)[0]
