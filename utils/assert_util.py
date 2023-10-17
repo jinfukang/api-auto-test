@@ -54,7 +54,7 @@ def contains_assert(expect, real):
 def greater_assert(expect, real):
     flag = 0
     for key, value in expect.items():
-        if key == "code":
-            if value > real['code']:
+        if key == "time":
+            if real['time'] > value:
                 flag += 1
     return flag

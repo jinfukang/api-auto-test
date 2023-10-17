@@ -22,12 +22,13 @@ class RequestUtils:
 
         if 'extract' in caseinfo.keys():
             result = res.json()
+            result['time'] = res.elapsed.microseconds / 1000
             if result.get('code') == 200:
                 for item in caseinfo['extract']:
                     for key, value in item.items():
                         id = jsonpath(result, value)[0]
                         write_data({key: id})
-        assert_result(caseinfo['validate'], res.json())
+        assert_result(caseinfo['validate'], result)
 
     def replace_value(self, data):
         if '${' in data:
