@@ -29,13 +29,11 @@ def ddt(caseinfo):
             for x in range(1, len(data_list)):
                 temp_caseinfo = caseinfo_str
                 for y in range(0, len(data_list[x])):
-                    # if data_list[0][y] in key_list:
                     if isinstance(data_list[x][y], int) or isinstance(data_list[x][y], float):
                         temp_caseinfo = temp_caseinfo.replace('"$ddt{' + data_list[0][y] + '}"', str(data_list[x][y]))
                     else:
                         temp_caseinfo = temp_caseinfo.replace("$ddt{" + data_list[0][y] + "}",
                                                               str(data_list[x][y]))
-                print(temp_caseinfo)
                 new_caseinfo.append(json.loads(temp_caseinfo))
         return new_caseinfo
     else:
