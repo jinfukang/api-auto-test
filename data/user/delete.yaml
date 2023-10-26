@@ -2,14 +2,14 @@
   feature: "$ddt{feature}"
   base_url: "${read_config_yaml(base,url)}"
   request:
-    url: "v1/update/$ddt{username}"
-    method: "post"
-    json:
-      active: $ddt{active}
-      token: "${read_extract_yaml(token)}"
+    url: "/v1/user/$ddt{id}"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "${read_extract_yaml(token)}"
+    method: "delete"
   validate:
     - equals: {code: "$ddt{code}"}
     - greater: {time: 2000}
   parameterize:
-    - ["feature", "username", "active", "code"]
-    - ["删除用户", "admin", 1, 200]
+    - ["feature", "id", "code"]
+    - ["删除用户", "${read_extract_yaml(id)}", 200]

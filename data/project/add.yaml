@@ -1,0 +1,25 @@
+-
+  feature: "$ddt{feature}"
+  base_url: "${read_config_yaml(base,url)}"
+  request:
+    url: "/v1/project"
+    method: "post"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "${read_extract_yaml(token)}"
+    json:
+      name: "$ddt{name}"
+      description: "$ddt{description}"
+      user_id: "${read_extract_yaml(id)}"
+      version: "$ddt{version}"
+      active: "$ddt{active}"
+  extract:
+    - project_id: "$..id"
+  validate:
+    - equals: {code: "$ddt{code}"}
+    - equals: {msg: "$ddt{msg}"}
+    - greater: {time: 2000}
+  parameterize:
+    - ["feature", "name", "description", "version", "active", "code", "msg"]
+    - ["创建项目-正常创建", "test", "test-add-project", "1", 1, 200, "success"]
+    - ["创建项目-不传项目名称", "", "test-add-project", "1", 1, 400, "项目名称不能为空"]
