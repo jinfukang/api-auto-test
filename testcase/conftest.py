@@ -1,5 +1,5 @@
 import pytest, os
-from utils.yaml_utils import clear_yaml
+from utils.yaml_util import clear_yaml
 
 
 @pytest.fixture(scope='session', autouse=True)

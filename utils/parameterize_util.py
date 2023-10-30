@@ -1,5 +1,5 @@
 import json
-from utils.yaml_utils import read_data
+from utils.yaml_util import read_data
 
 
 def read_testcase_yaml(yaml_path):
@@ -34,6 +34,7 @@ def ddt(caseinfo):
                     else:
                         temp_caseinfo = temp_caseinfo.replace("$ddt{" + data_list[0][y] + "}",
                                                               str(data_list[x][y]))
+                print(temp_caseinfo)
                 new_caseinfo.append(json.loads(temp_caseinfo))
         return new_caseinfo
     else:

@@ -1,7 +1,14 @@
 base:
- url: http://10.100.41.17:80
-    # url: http://1.94.32.200:80
+ url: http://www.studyhard.website
+  # url: http://localhost:80
 log:
   log_name: logs_
   log_level: info
   log_format: '[%(asctime)s] %(filename)s->%(funcName)s line:%(lineno)d [%(levelname)s] %(message)s'
+
+db:
+  user: root
+  host: 127.0.0.1
+  password: wj318902
+  port: 3306
+  db: buildplateform

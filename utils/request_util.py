@@ -1,7 +1,7 @@
 import json
 import requests
 from utils.assert_util import assert_result
-from utils.yaml_utils import write_data
+from utils.yaml_util import write_data
 from jsonpath import jsonpath
 from utils.logger_util import log
 
@@ -33,6 +33,8 @@ class RequestUtils:
                             pass
                         else:
                             write_data({key: id})
+        if "{" in json.dumps(caseinfo['validate']):
+            caseinfo['validate'] = self.replace_value(caseinfo['validate'])
         assert_result(caseinfo['validate'], result)
 
     def replace_value(self, data):
@@ -45,14 +47,14 @@ class RequestUtils:
                 if param != '':
                     if ',' in param:
                         args = param.split(",")
-                        if data.index("${") == 0:
+                        if data.index("${") == 0 and data.index("}") == len(data) - 1:
                             # 判断是否整体替换 整体替换的情况是 "${xxx(x)}"
                             return getattr(self.obj, func_name)(*args)
                         else:
                             # 部分替换 情况是： "/v1/user/${read_extract_yaml(id)}"  需保留/v1/user 仅替换${x(x)}部分
                             return self.replace_return(data, getattr(self.obj, func_name)(*args))
                     else:
-                        if data.index("${") == 0:
+                        if data.index("${") == 0 and data.index("}") == len(data) - 1:
                             return getattr(self.obj, func_name)(param)
                         else:
                             return self.replace_return(data, getattr(self.obj, func_name)(param))
@@ -63,6 +65,12 @@ class RequestUtils:
             for key, value in data.items():
                 if '${' in str(value):
                     data[key] = self.replace_value(value)
+            return data
+        
+        if isinstance(data, list):
+            for i in range(len(data)):
+                if '${' in str(data[i]):
+                    data[i] = self.replace_value(data[i])
             return data
 
     def send_request(self, name, method, baseurl, url, headers, **kwargs):

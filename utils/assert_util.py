@@ -1,4 +1,5 @@
 from utils.logger_util import log
+from utils.mysql_util import DBUtil
 
 
 # 判断断言方式
@@ -16,6 +17,9 @@ def assert_result(expect, result_json):
                 if key == "greater":
                     greater_flag = greater_assert(value, result_json)
                     all_flag = all_flag + greater_flag
+                if key == "not_None":
+                    not_None_flag = not_None_assert(value)
+                    all_flag = all_flag + not_None_flag
         assert all_flag == 0
         log("接口测试成功")
     except Exception as e:
@@ -57,4 +61,19 @@ def greater_assert(expect, real):
         if key == "time":
             if real['time'] > value:
                 flag += 1
+    return flag
+
+
+# 不为空
+def not_None_assert(expect):
+    flag = 0
+    for key, value in expect.items():
+        if not value:
+            return flag
+        if key == "sql":
+            log("SQL校验：" + value)
+            with DBUtil() as db:
+                db.execute(value)
+                if db.fetchall() is None:
+                    flag += 1
     return flag

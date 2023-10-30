@@ -10,7 +10,7 @@
     json:
       name: "$ddt{name}"
       description: "$ddt{description}"
-      user_id: "${read_extract_yaml(id)}"
+      user_id: 70
       version: "$ddt{version}"
       active: "$ddt{active}"
   extract:

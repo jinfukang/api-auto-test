@@ -1,6 +1,6 @@
 import logging
 import time
-from utils.yaml_utils import read_config_yaml, get_root_path
+from utils.yaml_util import read_config_yaml, get_root_path
 
 class LoggerUtils:
     def creat_log(self,logger_name='log'):
