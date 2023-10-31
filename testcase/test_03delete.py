@@ -9,5 +9,9 @@ class TestDelete:
     delete接口测试
     """
     @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/delete.yaml"))
-    def test_delete(self, testcase):
+    def test_delete_user(self, testcase):
+        RequestUtils(DebugTalk()).standard_yaml(testcase)
+
+    @pytest.mark.parametrize("testcase", read_testcase_yaml("data/project/delete.yaml"))
+    def test_delete_project(self, testcase):
         RequestUtils(DebugTalk()).standard_yaml(testcase)

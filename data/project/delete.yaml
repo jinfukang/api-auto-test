@@ -2,14 +2,15 @@
   feature: "$ddt{feature}"
   base_url: "${read_config_yaml(base,url)}"
   request:
-    url: "/v1/user/${read_extract_yaml(id)}"
+    url: "/v1/project/${read_extract_yaml(project_id)}"
     headers:
       Content-Type: "application/json"
       Authorization: "${read_extract_yaml(token)}"
     method: "delete"
   validate:
     - equals: {code: "$ddt{code}"}
+    - equals: {msg: "$ddt{msg}"}
     - greater: {time: 2000}
   parameterize:
-    - ["feature", "code"]
-    - ["删除-删除用户", 200]
+    - ["feature", "code", "msg"]
+    - ["删除-删除项目", 200, "success"]

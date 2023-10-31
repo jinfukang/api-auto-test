@@ -19,7 +19,8 @@
     - equals: {code: "$ddt{code}"}
     - equals: {msg: "$ddt{msg}"}
     - greater: {time: 2000}
+    - not_None: {sql: "$ddt{sql}"}
   parameterize:
-    - ["feature", "name", "description", "version", "active", "code", "msg"]
-    - ["创建项目-正常创建", "test", "test-add-project", "1", 1, 200, "success"]
-    - ["创建项目-不传项目名称", "", "test-add-project", "1", 1, 400, "项目名称不能为空"]
+    - ["feature", "name", "description", "version", "active", "code", "msg", "sql"]
+    - ["创建项目-正常创建", "test", "test-add-project", "1", 1, 200, "success", "select id from projects where id = ${read_extract_yaml(project_id)}"]
+    - ["创建项目-不传项目名称", "", "test-add-project", "1", 1, 400, "项目名称不能为空", ""]

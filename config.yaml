@@ -1,6 +1,6 @@
 base:
- url: http://www.studyhard.website
-  # url: http://localhost:80
+#  url: http://www.studyhard.website
+  url: http://localhost:80
 log:
   log_name: logs_
   log_level: info
