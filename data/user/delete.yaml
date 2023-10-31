@@ -12,4 +12,4 @@
     - greater: {time: 2000}
   parameterize:
     - ["feature", "id", "code"]
-    - ["删除用户", "${read_extract_yaml(id)}", 200]
+    - ["删除-删除用户", "${read_extract_yaml(id)}", 200]

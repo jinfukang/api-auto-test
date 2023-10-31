@@ -15,11 +15,6 @@ class TestUser:
     def test_login(self, testcase):
         RequestUtils(DebugTalk()).standard_yaml(testcase)
 
-    @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/delete.yaml"))
-    @pytest.mark.p1
-    def test_delete(self, testcase):
-        RequestUtils(DebugTalk()).standard_yaml(testcase)
-
 
 if __name__ == '__main__':
     pytest.main()

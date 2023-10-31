@@ -9,7 +9,8 @@ def fixture():
         os.system("type nul>extract.yaml")
     if not os.path.exists("logs"):
         os.mkdir("logs")
-    # 删除新增的用户
-    # 删除新增的项目
-    # 清空依赖数据
+    if not os.path.exists("reports"):
+        os.mkdir("reports")
+    if not os.path.exists("temps"):
+        os.mkdir("temps")
     clear_yaml()
