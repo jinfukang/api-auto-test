@@ -71,7 +71,7 @@ def not_None_assert(expect):
         if not value:
             return flag
         if key == "sql":
-            log(" SQL校验：" + value)
+            log("校验SQL：" + value)
             with DBUtil() as db:
                 db.execute(value)
                 if db.fetchall() is None:

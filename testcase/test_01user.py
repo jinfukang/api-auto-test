@@ -6,13 +6,15 @@ from debugTalk.debug_talk import DebugTalk
 
 class TestUser:
     @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/add.yaml"))
-    @pytest.mark.p1
     def test_add(self, testcase):
         RequestUtils(DebugTalk()).standard_yaml(testcase)
 
     @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/login.yaml"))
-    @pytest.mark.p1
     def test_login(self, testcase):
+        RequestUtils(DebugTalk()).standard_yaml(testcase)
+
+    @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/update.yaml"))
+    def test_update(self, testcase):
         RequestUtils(DebugTalk()).standard_yaml(testcase)
 
 

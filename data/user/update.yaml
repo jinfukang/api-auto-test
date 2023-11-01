@@ -1,0 +1,22 @@
+- feature: "$ddt{feature}"
+  base_url: "${read_config_yaml(base,url)}"
+  request:
+    url: "/v1/user/update/${read_extract_yaml(username)}"
+    method: "post"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "${read_extract_yaml(token)}"
+    json:
+      username: "$ddt{username}"
+  extract:
+    - id: "$..ID"
+    - username: "$..username"
+  validate:
+    - equals: { code: "$ddt{code}" }
+    - greater: { time: 2000 }
+    - not_None: { sql: "$ddt{check_sql}"}
+  parameterize:
+    - [ "feature", "username", "code", "msg", "check_sql"]
+    - ["修改-修改用户名称", "${get_random_username()}", 200, "success", "select username from users where username = '${read_extract_yaml(username)}'"]
+    - ["修改-修改不存在的用户名", "21313", 400, "用户不存在", ""]
+    - ["修改-修改成已存在的用户名", "admin", 400, "${read_extract_yaml(username)}  用户已存在", ""]
