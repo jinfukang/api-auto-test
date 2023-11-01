@@ -11,9 +11,11 @@ def read_data(filepath):
         return res
 
 
-def write_data(data=None):
+def write_data(data: dict):
+    res = read_data("/extract.yaml")
     with open(get_root_path() + "/extract.yaml", mode="a+", encoding="utf-8") as file:
-        yaml.dump(data=data, stream=file)
+        res.update(data)
+        yaml.dump(res, file)
 
 
 def clear_yaml():
