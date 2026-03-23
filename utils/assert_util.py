@@ -21,7 +21,7 @@ def assert_result(expect, result_json):
                     not_None_flag = not_None_assert(value)
                     all_flag = all_flag + not_None_flag
         assert all_flag == 0
-        log("接口测试成功")
+        log("接口测试通过")
     except Exception as e:
         log("接口测试失败")
         log("断言异常：%s" % str(e))
@@ -38,8 +38,8 @@ def equal_assert(expect, real):
         if key == "code":
             if value != real['code']:
                 flag += 1
-        if key == "msg":
-            if value != real['msg']:
+        if key == "message":
+            if value != real['message']:
                 flag += 1
     return flag
 

@@ -2,7 +2,7 @@
   feature: "$ddt{feature}"
   base_url: "${read_config_yaml(base,url)}"
   request:
-    url: "/v1/user/login"
+    url: "/api/auth/login"
     method: "post"
     headers:
       Content-Type: "application/json"
@@ -10,13 +10,12 @@
       username: "$ddt{username}"
       password: "$ddt{password}"
   extract:
-    - token: "$..token"
+    - token: "$..access_token"
   validate:
     - equals: {code: "$ddt{code}"}
-    - equals: {msg: "$ddt{msg}"}
+    - equals: {message: "$ddt{message}"}
     - greater: {time: 2000}
   parameterize:
-    - ["feature", "username", "password", "code", "msg"]
-    - ["登录-正常登录", "admin", "123456789", 200, "登录成功"]
-    - ["登录-不存在的用户名", "${get_random_username()}", "wj318902", 201, "用户不存在"]
-    - ["登录-密码错误", "admin", "wj3189021", 200, "密码错误"]
+    - ["feature", "username", "password", "code", "message"]
+    - ["登录-正常登录", "admin", "admin123", 0, "成功"]
+    - ["登录-用户名错误", "admin", "admin1231", 1, "用户名或密码错误"]

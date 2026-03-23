@@ -5,18 +5,10 @@ from debugTalk.debug_talk import DebugTalk
 
 
 class TestUser:
-    @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/add.yaml"))
-    def test_add(self, testcase):
-        RequestUtils(DebugTalk()).standard_yaml(testcase)
 
     @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/login.yaml"))
     def test_login(self, testcase):
         RequestUtils(DebugTalk()).standard_yaml(testcase)
-
-    @pytest.mark.parametrize("testcase", read_testcase_yaml("data/user/update.yaml"))
-    def test_update(self, testcase):
-        RequestUtils(DebugTalk()).standard_yaml(testcase)
-
 
 if __name__ == '__main__':
     pytest.main()

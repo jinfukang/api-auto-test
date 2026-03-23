@@ -1,0 +1,10 @@
+
+pytest==9.0.2
+allure-pytest==2.15.3
+
+requests==2.32.3
+PyYAML==6.0.3
+jsonpath==0.82.2
+
+# MySQL
+PyMySQL==1.1.1
