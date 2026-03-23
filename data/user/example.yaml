@@ -6,6 +6,7 @@
     method: "post"
     headers:
       Content-Type: "application/json"
+      Authorization: "Bearer ${read_extract_yaml(access_token)}"
     json:
       username: "$ddt{username}"
       password: "$ddt{password}"
@@ -14,8 +15,8 @@
   validate:
     - equals: {"$.code": "$ddt{code}"}
     - equals: {"$.message": "$ddt{message}"}
-    - greater: {"$.time": 300}
-    - between: {"$.time": [0, 1000]}
+    - greater: {"$.time": 2000}
+    - between: {"$.time": [1000, 3000]}
   parameterize:
     - ["feature", "username", "password", "code", "message"]
     - ["登录-正常登录", "admin", "admin123", 0, "成功"]
